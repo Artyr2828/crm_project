@@ -16,9 +16,10 @@ return new class extends Migration
           $table->foreignId('customer_id')->constrained()->onDelete('cascade');
           $table->string('subject');
           $table->text('message');
-          $table->enum('status', ['new', 'in_progress', 'complete']);
+          $table->enum('status', ['new', 'in_progress', 'completed']);
 
           $table->timestamp('manager_data_otvet')->nullable();
+          $table->timestamps();
         });
     }
 

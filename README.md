@@ -37,14 +37,17 @@
 ### 1. Подготовка окружения
 ```bash
 # Клонирование
-git clone [https://github.com/Artyr2828/crm_project.git](https://github.com/Artyr2828/crm_project.git)
+git clone https://github.com/Artyr2828/crm_project.git
+#Перейдите
 cd crm_project
 
 # Установка зависимостей
 composer install
 
 # Настройка .env
-cp .env.example .env
+cp .env.example .env (для линукс)
+copy .env.example .env (для пк)
+
 php artisan key:generate
 
 Откройте файл .env и укажите данные вашего MySQL:
@@ -53,10 +56,23 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=your_db_name
-DB_USERNAME=your_db_user
-DB_PASSWORD=your_db_password
+DB_USERNAME=your_db_user (можете root поставить)
+DB_PASSWORD=your_db_password (если root то без пароля)
+
+# Запустите MySql(Можно через XAMPP)
 
 ```bash
 # Предварительно создайте пустую БД в MySQL
 php artisan migrate --seed
+
 php artisan storage:link
+
+npm install
+npm run build
+
+# Запускайте
+php artisan serve
+
+#для входа в админ панель
+admin@gmail.com (пароль: admin123)
+manager@gmail.com (manager123)
